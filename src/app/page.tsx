@@ -83,7 +83,51 @@ export default function Home() {
           </button>
         </div>
 
-
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-[#f5f2ea] py-4 px-4 border-b">
+            <nav className="flex flex-col gap-4">
+              <Link
+                href="#home"
+                className="text-sm font-semibold hover:text-[#5a7d2a] transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="#about"
+                className="text-sm font-semibold hover:text-[#5a7d2a] transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Sobre
+              </Link>
+              <Link
+                href="#services"
+                className="text-sm font-semibold hover:text-[#5a7d2a] transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Serviços
+              </Link>
+              <Link
+                href="#testimonials"
+                className="text-sm font-semibold hover:text-[#5a7d2a] transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Depoimentos
+              </Link>
+              <Link
+                href="#contact"
+                className="text-sm font-semibold hover:text-[#5a7d2a] transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contato
+              </Link>
+              <button className="bg-[#5a7d2a] hover:bg-[#4a6822] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors w-full mt-2">
+                Agendar Consulta
+              </button>
+            </nav>
+          </div>
+        )}
       </header>
 
       <main className="flex-1">
