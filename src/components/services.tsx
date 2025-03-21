@@ -9,12 +9,12 @@ export default function Services() {
       description: "Avaliação completa do seu estado nutricional e elaboração de um plano alimentar personalizado.",
     },
     {
-      title: "Nutrição Esportiva",
+      title: "Nutricao Esportiva",
       description:
         "Planos alimentares específicos para atletas e praticantes de atividade física, visando melhor desempenho.",
     },
     {
-      title: "Reeducação Alimentar",
+      title: "Reeducacao Alimentar",
       description: "Aprenda a desenvolver hábitos alimentares saudáveis e sustentáveis para toda a vida.",
     },
   ]
@@ -41,7 +41,7 @@ export default function Services() {
             >
               <div className="h-48 relative overflow-hidden">
                 <Image
-                  src={nutrition || "/placeholder.svg"}
+                  src={`/services/${service.title}.png`}
                   alt={service.title}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
