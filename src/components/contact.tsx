@@ -1,5 +1,11 @@
 import { Phone, Mail, MapPin, Clock, Calendar } from "lucide-react"
 
+interface ContactItemProps {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+}
+
 export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-white text-[#5a7d2a]">
@@ -51,7 +57,7 @@ export default function Contact() {
   )
 }
 
-function ContactItem({ icon, label, value }) {
+function ContactItem({ icon, label, value }: ContactItemProps) {
   return (
     <div className="flex items-center gap-4">
       <div className="h-10 w-10 rounded-full bg-[#e8e1d1] flex items-center justify-center">{icon}</div>
