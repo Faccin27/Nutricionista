@@ -53,7 +53,7 @@ export default function Testimonials() {
                     <p className="text-sm text-gray-500">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="italic text-gray-600">"{testimonial.quote}"</p>
+                <p className="italic text-gray-600">&quot;{testimonial.quote}&quot;</p>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-[#5a7d2a]" fill="#5a7d2a" />
