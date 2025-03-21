@@ -18,7 +18,7 @@ import {
 import alimento from "@/assets/alimento.png";
 import saraiva from "@/assets/saraiva.jpg";
 import logo from "@/assets/aaaa.png";
-import nutrition from '@/assets/Nutrition.jpg'
+import nutrition from "@/assets/Nutrition.jpg";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("frutas");
@@ -230,10 +230,13 @@ export default function Home() {
               <div className="inline-block rounded-full bg-[#e8e1d1] px-3 py-1 text-sm font-medium text-[#5a7d2a] mb-4">
                 Serviços
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#3c3c3c]">Como posso ajudar você</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#3c3c3c]">
+                Como posso ajudar você
+              </h2>
               <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-                Ofereço uma variedade de serviços nutricionais personalizados para atender às suas necessidades
-                específicas e ajudá-lo a alcançar seus objetivos de saúde.
+                Ofereço uma variedade de serviços nutricionais personalizados
+                para atender às suas necessidades específicas e ajudá-lo a
+                alcançar seus objetivos de saúde.
               </p>
             </div>
 
@@ -251,7 +254,8 @@ export default function Home() {
                 },
                 {
                   title: "Reeducação Alimentar",
-                  description: "Aprenda a desenvolver hábitos alimentares saudáveis e sustentáveis para toda a vida.",
+                  description:
+                    "Aprenda a desenvolver hábitos alimentares saudáveis e sustentáveis para toda a vida.",
                 },
               ].map((service, index) => (
                 <div
@@ -267,7 +271,9 @@ export default function Home() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 text-[#3c3c3c]">{service.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 text-[#3c3c3c]">
+                      {service.title}
+                    </h3>
                     <p className="text-gray-600 mb-4">{service.description}</p>
                     <button className="text-[#5a7d2a] font-medium flex items-center gap-1 hover:gap-2 transition-all">
                       Saiba mais <ArrowRight className="h-4 w-4" />
@@ -275,6 +281,180 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <div className="inline-block rounded-full bg-[#e8e1d1] px-3 py-1 text-sm font-medium text-[#5a7d2a] mb-4">
+                Nutrição
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#3c3c3c]">
+                Descubra os alimentos ideais para você
+              </h2>
+              <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+                Explore diferentes grupos alimentares e descubra como eles podem
+                beneficiar sua saúde.
+              </p>
+            </div>
+
+            {/* Custom Tabs */}
+            <div className="w-full max-w-4xl mx-auto">
+              <div className="flex border-b mb-8 overflow-x-auto">
+                {["frutas", "vegetais", "proteinas", "graos"].map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-4 py-2 font-medium text-sm transition-colors ${
+                      activeTab === tab
+                        ? "border-b-2 border-[#5a7d2a] text-[#5a7d2a]"
+                        : "text-gray-600 hover:text-[#5a7d2a]"
+                    }`}
+                  >
+                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  </button>
+                ))}
+              </div>
+
+              <div className="p-4 bg-[#f9f7f2] rounded-lg">
+                {activeTab === "frutas" && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                      "Melancia",
+                      "Melao",
+                      "Laranja",
+                      "Batata",
+                      "Morango",
+                      "Coco",
+                    ].map((fruit, index) => (
+                      <div
+                        key={index}
+                        className="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3 hover:shadow-md transition-shadow"
+                      >
+                        <div className="h-12 w-12 rounded-full bg-[#e8e1d1] flex items-center justify-center">
+                          <Image
+                            src={`/frutas/${fruit}.png`}
+                            alt={fruit}
+                            width={40}
+                            height={40}
+                            className="rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-[#5a7d2a]">{fruit}</h4>
+                          <p className="text-xs text-gray-500">
+                            Rico em vitaminas
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {activeTab === "vegetais" && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                      "Berinjela",
+                      "Cebola",
+                      "Cenoura",
+                      "Tomate",
+                      "Rabanete",
+                      "Pimentao",
+                    ].map((veg, index) => (
+                      <div
+                        key={index}
+                        className="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3 hover:shadow-md transition-shadow"
+                      >
+                        <div className="h-12 w-12 rounded-full bg-[#e8e1d1] flex items-center justify-center">
+                          <Image
+                            src={`/vegetal/${veg}.png`}
+                            alt={veg}
+                            width={40}
+                            height={40}
+                            className="rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-[#5a7d2a]">{veg}</h4>
+                          <p className="text-xs text-gray-500">
+                            Rico em minerais
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {activeTab === "proteinas" && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                      "Frango",
+                      "Peixe",
+                      "Ovo",
+                      "Queijo",
+                      "Feijao",
+                      "Lentilha",
+                    ].map((protein, index) => (
+                      <div
+                        key={index}
+                        className="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3 hover:shadow-md transition-shadow"
+                      >
+                        <div className="h-12 w-12 rounded-full bg-[#e8e1d1] flex items-center justify-center">
+                          <Image
+                            src={`/proteinas/${protein}.png`}
+                            alt={protein}
+                            width={40}
+                            height={40}
+                            className="rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-[#5a7d2a]">{protein}</h4>
+                          <p className="text-xs text-gray-500">
+                            Rico em proteínas
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {activeTab === "graos" && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                      "Arroz",
+                      "Quinoa",
+                      "Aveia",
+                      "Ervilha",
+                      "Feijao",
+                      "Lentilha",
+                    ].map((grain, index) => (
+                      <div
+                        key={index}
+                        className="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3 hover:shadow-md transition-shadow"
+                      >
+                        <div className="h-12 w-12 rounded-full bg-[#e8e1d1] flex items-center justify-center">
+                          <Image
+                            src={`/graos/${grain}.png`}
+                            alt={grain}
+                            width={40}
+                            height={40}
+                            className="rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-[#5a7d2a]">{grain}</h4>
+                          <p className="text-xs text-gray-500">
+                            Rico em fibras
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </section>
