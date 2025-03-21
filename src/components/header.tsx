@@ -50,7 +50,7 @@ export default function Header() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#f5f2ea] py-4 px-4 border-b">
-          <nav className="flex flex-col gap-4">
+          <nav className="flex flex-col gap-4 text-[#333]">
             <Link
               href="#home"
               className="text-sm font-semibold hover:text-[#5a7d2a] transition-colors"
