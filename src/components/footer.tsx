@@ -2,6 +2,16 @@ import Image from "next/image"
 import Link from "next/link"
 import logo from "@/assets/aaaa.png"
 
+
+interface SocialIconProps {
+  href: string
+  icon: "facebook" | "instagram" | "twitter"
+}
+interface FooterLinkProps {
+  href: string
+  text: string
+}
+
 export default function Footer() {
   return (
     <footer className="bg-[#3c3c3c] text-white py-12">
@@ -83,7 +93,7 @@ export default function Footer() {
   )
 }
 
-function FooterLink({ href, text }) {
+function FooterLink({ href, text }: FooterLinkProps) {
   return (
     <li>
       <Link href={href} className="text-gray-300 hover:text-white transition-colors">
@@ -93,7 +103,7 @@ function FooterLink({ href, text }) {
   )
 }
 
-function SocialIcon({ href, icon }) {
+function SocialIcon({ href, icon }: SocialIconProps) {
   return (
     <a
       href={href}
